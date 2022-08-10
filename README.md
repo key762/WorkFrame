@@ -1,5 +1,7 @@
 # WorkFrame
 
+[中文说明](README_ZH.md)
+
 The tool classes and components commonly used in the integrated development of this project facilitate the rapid development of the project
 
 ## License
