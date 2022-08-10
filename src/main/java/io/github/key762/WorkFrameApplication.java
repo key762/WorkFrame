@@ -1,4 +1,4 @@
-package com.key762.workframe;
+package io.github.key762;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -8,7 +8,7 @@
 		<version>2.7.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.key762</groupId>
+	<groupId>io.github.key762</groupId>
 	<artifactId>WorkFrame</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>WorkFrame</name>

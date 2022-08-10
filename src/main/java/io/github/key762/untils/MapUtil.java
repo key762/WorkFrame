@@ -1,4 +1,4 @@
-package com.key762.workframe.untils;
+package io.github.key762.untils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
