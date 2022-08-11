@@ -14,9 +14,9 @@ public class WorkFrameTests {
 	@Test
 	public void contextLoads() {
 		HashMap<String, String> map = new HashMap<>();
-		map.put("k1", "v");
-		map.put("k2", "v");
-		System.out.println(MapUtil.getKeyByValue(map,"v"));
+		map.put("k1", "v1");
+		map.put("k2", "v2");
+		System.out.println(MapUtil.getKeyByValue(map,"v1").get(0));
 	}
 
 }
