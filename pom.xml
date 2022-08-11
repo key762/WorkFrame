@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.github.key762</groupId>
 	<artifactId>WorkFrame</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2</version>
 	<packaging>jar</packaging>
 	<name>WorkFrame</name>
 	<description>The tool classes and components commonly used in the integrated development of this project facilitate the rapid development of the project</description>
