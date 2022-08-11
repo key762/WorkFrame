@@ -15,7 +15,9 @@ public class MapUtil {
      * 使用value从集合中获取key集合
      * @param map HashMap集合
      * @param value value值
-     * @return List<Object> 获取的Key值集合
+     * @param <K> 泛型Key
+     * @param <V> 泛型Value
+     * @return List<Object object> 获取的Key值集合
      */
     public static <K, V> List<Object> getKeyByValue(HashMap<K, V> map, String value){
         if ( map.isEmpty() ) {

@@ -10,12 +10,42 @@
 	</parent>
 	<groupId>io.github.key762</groupId>
 	<artifactId>WorkFrame</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
+	<packaging>jar</packaging>
 	<name>WorkFrame</name>
 	<description>The tool classes and components commonly used in the integrated development of this project facilitate the rapid development of the project</description>
+	<url>https://github.com/key762/WorkFrame</url>
+
+	<developers>
+		<developer>
+			<name>key762</name>
+			<email>2940397985@qq.com</email>
+			<roles>
+				<role>Project Manager</role>
+				<role>Architect</role>
+			</roles>
+			<timezone>+8</timezone>
+		</developer>
+	</developers>
+
+	<scm>
+		<connection>https://github.com/key762/WorkFrame.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com:key762/WorkFrame.git</developerConnection>
+		<url>https://github.com/key762/WorkFrame</url>
+	</scm>
+
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo,manual</distribution>
+		</license>
+	</licenses>
+
 	<properties>
-		<java.version>17</java.version>
+		<java.version>8</java.version>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -27,7 +57,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
 	</dependencies>
 
 	<build>
@@ -38,5 +67,113 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<profiles>
+		<profile>
+			<!--注意,此id必须与setting.xml中指定的一致,不要自作聪明改它名字-->
+<!--			<id>ossrh</id>-->
+			<id>release</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<build>
+				<!--发布到中央RELEASE仓库插件-->
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-release-plugin</artifactId>
+						<version>2.5.3</version>
+						<configuration>
+							<autoVersionSubmodules>true</autoVersionSubmodules>
+							<useReleaseProfile>false</useReleaseProfile>
+							<releaseProfiles>release</releaseProfiles>
+							<goals>deploy</goals>
+						</configuration>
+					</plugin>
+					<!--发布到中央SNAPSHOT仓库插件-->
+<!--					<plugin>-->
+<!--						<groupId>org.sonatype.plugins</groupId>-->
+<!--						<artifactId>nexus-staging-maven-plugin</artifactId>-->
+<!--						<version>1.6.7</version>-->
+<!--						<extensions>true</extensions>-->
+<!--						<configuration>-->
+<!--							<serverId>ossrh</serverId>-->
+<!--							<nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>-->
+<!--							<autoReleaseAfterClose>true</autoReleaseAfterClose>-->
+<!--						</configuration>-->
+<!--					</plugin>-->
+
+					<!--生成源码插件-->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-source-plugin</artifactId>
+						<version>2.2.1</version>
+						<executions>
+							<execution>
+								<id>attach-sources</id>
+								<goals>
+									<goal>jar-no-fork</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+
+					<!--生成API文档插件-->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<version>2.9.1</version>
+						<configuration>
+							<!-- 忽略生成文档中的错误 -->
+							<additionalparam>-Xdoclint:none</additionalparam>
+							<aggregate>true</aggregate>
+							<charset>UTF-8</charset><!-- utf-8读取文件 -->
+							<encoding>UTF-8</encoding><!-- utf-8进行编码代码 -->
+							<docencoding>UTF-8</docencoding><!-- utf-8进行编码文档 -->
+						</configuration>
+						<executions>
+							<execution>
+								<id>attach-javadocs</id>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+
+					<!--gpg插件-->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>1.5</version>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+
+				</plugins>
+			</build>
+
+			<distributionManagement>
+				<snapshotRepository>
+					<!--注意,此id必须与setting.xml中指定的一致-->
+<!--					<id>ossrh</id>-->
+					<id>release</id>
+					<url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+				</snapshotRepository>
+				<repository>
+<!--					<id>ossrh</id>-->
+					<id>release</id>
+					<url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+				</repository>
+			</distributionManagement>
+		</profile>
+	</profiles>
 
 </project>
