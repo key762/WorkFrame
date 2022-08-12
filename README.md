@@ -1,9 +1,19 @@
-# WorkFrame
+# 工作框架
 
-[中文说明](README_ZH.md)
+[English description](README_EN.md)
 
-The tool classes and components commonly used in the integrated development of this project facilitate the rapid development of the project
+此项目集成常用的开发工具类和组件，便于快速开发项目
 
-## License
+## Maven 依赖
 
-This project is licensed under the [BSD License](https://opensource.org/licenses/bsd-license.php) - see the [LICENSE](https://github.com/key762/WorkFrame/blob/main/LICENSE) file for details.
+```maven
+<dependency>
+  <groupId>io.github.key762</groupId>
+  <artifactId>WorkFrame</artifactId>
+  <version>0.0.4</version>
+</dependency>
+```
+
+## 许可
+
+该项目已获得 [BSD License](https://opensource.org/licenses/bsd-license.php) 许可 - 更多细节请查看 [LICENSE](https://github.com/key762/WorkFrame/blob/main/LICENSE) .
