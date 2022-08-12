@@ -6,11 +6,11 @@
 
 ## Maven 依赖
 
-```maven
+```xml
 <dependency>
-  <groupId>io.github.key762</groupId>
-  <artifactId>WorkFrame</artifactId>
-  <version>0.0.4</version>
+    <groupId>io.github.key762</groupId>
+    <artifactId>WorkFrame</artifactId>
+    <version>0.0.4</version>
 </dependency>
 ```
 

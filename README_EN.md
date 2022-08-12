@@ -6,13 +6,14 @@ The tool classes and components commonly used in the integrated development of t
 
 ## Maven Dependencies
 
-```maven
+```xml
 <dependency>
   <groupId>io.github.key762</groupId>
   <artifactId>WorkFrame</artifactId>
   <version>0.0.4</version>
 </dependency>
 ```
+
 ## License
 
 This project is licensed under the [BSD License](https://opensource.org/licenses/bsd-license.php) - see the [LICENSE](https://github.com/key762/WorkFrame/blob/main/LICENSE) file for details.
